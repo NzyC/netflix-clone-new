@@ -1,6 +1,11 @@
-import firebase from './firebase'
+// Import the functions you need from the SDKs you need
+import { initializeApp } from "firebase/app";
+import { getFirestore} from 'firebase/firestore';
+import { getAuth } from "firebase/auth";
+// TODO: Add SDKs for Firebase products that you want to use
+// https://firebase.google.com/docs/web/setup#available-libraries
 
-// For Firebase JS SDK v7.20.0 and later, measurementId is optional
+// Your web app's Firebase configuration
 const firebaseConfig = {
   apiKey: "AIzaSyA5UO00x60TL5GO69FAWfsQPlojBPgJhcM",
   authDomain: "netflix-clone-new-d29fd.firebaseapp.com",
@@ -11,9 +16,7 @@ const firebaseConfig = {
   measurementId: "G-6JZQD7XM83"
 };
 
-const firebaseApp = firebase.initializeApp(firebaseConfig)
-const db = firebaseApp.firestore;
-const auth = firebase.auth();
-
-export { auth }
-export default db
+// Initialize Firebase
+const app = initializeApp(firebaseConfig);
+export const auth = getAuth();
+export const db = getFirestore();
